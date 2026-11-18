@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dhanushya Muthumani | Portfolio & About Me</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #1a1b26;
+      --card-bg: #24283b;
+      --card-border: #414868;
+      --text-primary: #c0caf5;
+      --text-secondary: #9aa5ce;
+      --accent: #00d9ff;
+      --accent-glow: rgba(0, 217, 255, 0.25);
+      --purple: #bb9af7;
+      --green: #73daca;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text-primary);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding: 2.5rem 1rem;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 800px;
+      display: flex;
+      flex-direction: column;
+      gap: 1.75rem;
+    }
+
+    header {
+      text-align: center;
+      padding: 2.25rem 1.5rem;
+      background: var(--card-bg);
+      border-radius: 16px;
+      border: 1px solid var(--card-border);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: #fff;
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+    }
+
+    h1 span.highlight {
+      color: var(--accent);
+      text-shadow: 0 0 15px var(--accent-glow);
+    }
+
+    .subtitle {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+
+    section {
+      background: var(--card-bg);
+      border-radius: 16px;
+      border: 1px solid var(--card-border);
+      padding: 1.75rem 2rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    section h2 {
+      font-size: 1.3rem;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 1.25rem;
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 0.75rem;
+    }
+
+    .about-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .about-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: 0.98rem;
+    }
+
+    .about-list li strong {
+      color: var(--purple);
+    }
+
+    .project-card {
+      background: rgba(26, 27, 38, 0.65);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 1.5rem;
+    }
+
+    .project-card h3 {
+      font-size: 1.15rem;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+
+    .project-card p {
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+    }
+
+    .project-highlights {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .tag {
+      background: rgba(0, 217, 255, 0.1);
+      color: var(--accent);
+      border: 1px solid rgba(0, 217, 255, 0.3);
+      padding: 0.35rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+    }
+
+    .btn-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--accent);
+      color: #1a1b26;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    .btn-link:hover {
+      opacity: 0.9;
+      transform: scale(1.02);
+    }
+
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+
+    .tech-category {
+      background: rgba(26, 27, 38, 0.6);
+      border: 1px solid var(--card-border);
+      border-radius: 10px;
+      padding: 1rem;
+    }
+
+    .tech-category h4 {
+      color: var(--green);
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .tech-category p {
+      color: var(--text-primary);
+      font-size: 0.92rem;
+    }
+
+    .connect-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+
+    .connect-list li a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: text-decoration 0.2s;
+    }
+
+    .connect-list li a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+
+    footer .heart {
+      color: var(--accent);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <h1>✨ Hey there! I'm <span class="highlight">Dhanushya Muthumani</span> 👋</h1>
+      <p class="subtitle">💻 Final Year B.E. Computer Science and Engineering Student</p>
+    </header>
+
+    <!-- About Me -->
+    <section>
+      <h2>🌸 About Me</h2>
+      <ul class="about-list">
+        <li><span>🎓</span> <div><strong>Education:</strong> Final Year B.E. Computer Science and Engineering Student.</div></li>
+        <li><span>💡</span> <div><strong>Interests:</strong> Interested in software development and innovative technologies.</div></li>
+        <li><span>🚀</span> <div><strong>Passion:</strong> Passionate about creating useful real-world applications.</div></li>
+        <li><span>🧩</span> <div><strong>Mindset:</strong> Enjoy learning, exploring, and solving technical challenges.</div></li>
+        <li><span>✨</span> <div><strong>Belief:</strong> Believe in continuous improvement and building something meaningful.</div></li>
+      </ul>
+    </section>
+
+    <!-- Featured Project -->
+    <section>
+      <h2>🚀 Featured Project</h2>
+      <div class="project-card">
+        <h3>💼 Freelancer Invoice and Client Management System</h3>
+        <p>A project focused on simplifying freelancer business operations through client management and invoice management.</p>
+        <div class="project-highlights">
+          <span class="tag">👥 Client Management</span>
+          <span class="tag">🧾 Invoice Management</span>
+          <span class="tag">⚡ Organized Freelancer Workflow</span>
+        </div>
+        <a class="btn-link" href="https://github.com/dhanushyadhanushya63-dotcom" target="_blank" rel="noopener noreferrer">
+          🔗 Explore My GitHub Projects
+        </a>
+      </div>
+    </section>
+
+    <!-- Technologies & Tools -->
+    <section>
+      <h2>🛠️ Technologies & Tools</h2>
+      <div class="tech-grid">
+        <div class="tech-category">
+          <h4>💻 Programming Languages</h4>
+          <p>Java, C</p>
+        </div>
+        <div class="tech-category">
+          <h4>🌐 Web Development</h4>
+          <p>HTML, CSS, JavaScript, React</p>
+        </div>
+        <div class="tech-category">
+          <h4>🗄️ Database</h4>
+          <p>MySQL</p>
+        </div>
+        <div class="tech-category">
+          <h4>⚙️ Tools & Platforms</h4>
+          <p>Git, GitHub, VS Code</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Let's Connect -->
+    <section>
+      <h2>🤝 Let's Connect!</h2>
+      <ul class="connect-list">
+        <li>
+          💼 <strong>LinkedIn:</strong> 
+          <a href="https://www.linkedin.com/in/dhanushya-muthumani-a11976317" target="_blank" rel="noopener noreferrer">
+            linkedin.com/in/dhanushya-muthumani-a11976317
+          </a>
+        </li>
+        <li>
+          📧 <strong>Gmail:</strong> 
+          <a href="mailto:dhanushyadhanushya63@gmail.com">
+            dhanushyadhanushya63@gmail.com
+          </a>
+        </li>
+        <li>
+          🐙 <strong>GitHub:</strong> 
+          <a href="https://github.com/dhanushyadhanushya63-dotcom" target="_blank" rel="noopener noreferrer">
+            github.com/dhanushyadhanushya63-dotcom
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <h3><span class="heart">💙</span> Thanks for visiting my profile!</h3>
+      <p>✨ Keep Learning | Keep Building | Keep Growing ✨</p>
+    </footer>
+  </div>
+</body>
+</html>
